@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>上傳檔案</title>
+    <link rel="stylesheet" type="text/css" href="common.css">
 </head>
 <body>
 <div>
@@ -16,10 +17,10 @@
 <div id="menu" style="border: solid;float:left;width: 15%;height: 100%;">
     <%@include file="/WEB-INF/jspf/menu.jspf"%>
 </div>
-<div id="content" style="border: solid;float:right;width: 80%;height: 100%;padding: 20px">
-    <label for="docs">選擇要上傳的檔案</label><br>
+<div id="content">
+    <label for="indexRecords">選擇要上傳的檔案</label><br>
     <form action="/docs_upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="docs" id="docs" multiple="true" ><br>
+        <input type="file" name="indexRecords" id="indexRecords" multiple="true" ><br>
         <input type="submit">
     </form>
 </div>

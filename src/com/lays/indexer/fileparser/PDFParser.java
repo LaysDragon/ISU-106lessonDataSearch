@@ -1,26 +1,36 @@
 package com.lays.indexer.fileparser;
 
 import com.lays.indexer.Document;
-import org.apache.commons.io.IOUtils;
+import org.apache.pdfbox.io.RandomAccess;
+import org.apache.pdfbox.io.RandomAccessRead;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.IOException;
-import java.nio.charset.Charset;
 
-public class TextParser extends FileParser {
-    public TextParser() {
-        super(new String[]{"txt"});
+public class PDFParser extends FileParser {
+    public PDFParser() {
+        super(new String[]{"pdf"});
     }
 
     @Override
     public String Parse(Part filepart) throws IOException {
-        return IOUtils.toString(filepart.getInputStream(), Charset.forName("utf-8"));
+        PDDocument document = PDDocument.load(filepart.getInputStream());
+        PDFTextStripper pdfTextStripper = new PDFTextStripper();
+        pdfTextStripper.setStartPage(1);
+        pdfTextStripper.setEndPage( document.getNumberOfPages());
+        String text = pdfTextStripper.getText(document);
+        document.close();
+
+        return text;
     }
+
     @Override
     public void handleResponse(Document doc, HttpServletResponse response) {
-        response.setContentType("text/plain");
+        response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", "filename=\""+doc.getName()+"\"");
 //        ServletOutputStream outputStream = null;
 

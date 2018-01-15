@@ -1,0 +1,21 @@
+#content{
+    border: solid;
+    float:right;
+    width: 80%;
+    min-height: 100%;
+    padding: 20px;
+    word-wrap: break-word;
+}
+
+table.border_bottom{
+    /*border-spacing: 0;*/
+    /*border-collapse: collapse;*/
+}
+table.border_bottom > tbody > tr:nth-child(2n) > td{
+     /*border-bottom:1px solid gray;*/
+     background-color: bisque;
+ }
+table.border_bottom > tbody > tr:nth-child(1) > td{
+    /*border-bottom:1px solid gray;*/
+    background-color: burlywood;
+}

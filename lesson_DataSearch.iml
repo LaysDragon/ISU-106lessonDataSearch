@@ -25,5 +25,14 @@
     <orderEntry type="library" name="Spring-4.3.10.RELEASE" level="project" />
     <orderEntry type="library" name="org.apache.tomcat:tomcat-servlet-api:9.0.0.M27" level="project" />
     <orderEntry type="library" name="commons-io:commons-io:2.5" level="project" />
+    <orderEntry type="library" name="pdfbox-2.0.7" level="project" />
+    <orderEntry type="library" name="commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="fontbox-2.0.7" level="project" />
+    <orderEntry type="library" name="jstl-1.2" level="project" />
+    <orderEntry type="library" name="org.apache.poi:poi:3.14" level="project" />
+    <orderEntry type="library" name="org.apache.poi:poi-ooxml:3.15" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.6" level="project" />
+    <orderEntry type="library" name="org.jsoup:jsoup:1.11.1" level="project" />
+    <orderEntry type="library" name="edu.uci.ics:crawler4j:4.3" level="project" />
   </component>
 </module>

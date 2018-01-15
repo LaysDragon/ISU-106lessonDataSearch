@@ -7,8 +7,24 @@
         <servlet-name>docs_upload</servlet-name>
         <servlet-class>com.lays.servlet.docs_upload</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>get_doc</servlet-name>
+        <servlet-class>com.lays.servlet.get_doc</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>download</servlet-name>
+        <servlet-class>com.lays.servlet.saveDatabase</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>docs_upload</servlet-name>
         <url-pattern>/docs_upload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>get_doc</servlet-name>
+        <url-pattern>/get_doc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>download</servlet-name>
+        <url-pattern>/save</url-pattern>
     </servlet-mapping>
 </web-app>

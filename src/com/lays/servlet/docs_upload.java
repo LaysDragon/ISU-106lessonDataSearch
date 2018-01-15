@@ -1,13 +1,10 @@
 package com.lays.servlet;
 
 import com.lays.indexer.IndexManager;
-import org.apache.commons.io.IOUtils;
 
 import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Part;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.Collection;
 
 @MultipartConfig
@@ -22,7 +19,7 @@ public class docs_upload extends javax.servlet.http.HttpServlet {
 
         }
         try {
-            IndexManager.getInstance().AddFileParts(fileparts);
+            IndexManager.getInstance().addFileParts(fileparts);
         } catch (Exception e) {
             e.printStackTrace();
         }
